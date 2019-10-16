@@ -37,10 +37,13 @@ import { Component } from '@angular/core';
 </codemirror>
   `
 })
+
+
 export class Sample{
   constructor(){
     this.config = {};
   }
 }
+
 Configuration
 config : The configuration object for CodeMirror see http://codemirror.net/doc/manual.html#config
