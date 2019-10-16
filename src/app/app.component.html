@@ -1,5 +1,6 @@
 <div style="text-align: center; margin: 20px auto">welcome to codemirror</div>
 <codemirror
+    [value]="value"
     [config]="config"
     (cursorActivity)="onCursorActivity($event)">
 </codemirror>
