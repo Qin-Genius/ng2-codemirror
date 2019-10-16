@@ -27,9 +27,9 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/ng2-codemirror/node_modules/codemirror/lib/codemirror.css",
-              "node_modules/ng2-codemirror/node_modules/codemirror/addon/hint/show-hint.css",
-              "node_modules/ng2-codemirror/node_modules/codemirror/theme/ambiance.css",
+              "src/app/@plugins/ng2-codemirror/node_modules/codemirror/lib/codemirror.css",
+              "src/app/@plugins/ng2-codemirror/node_modules/codemirror/addon/hint/show-hint.css",
+              "src/app/@plugins/ng2-codemirror/node_modules/codemirror/theme/ambiance.css",
               "src/styles.less"
             ],
             "scripts": [],
@@ -87,9 +87,9 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "node_modules/ng2-codemirror/node_modules/codemirror/lib/codemirror.css",
-              "node_modules/ng2-codemirror/node_modules/codemirror/addon/hint/show-hint.css",
-              "node_modules/ng2-codemirror/node_modules/codemirror/theme/ambiance.css",
+              "@plugins/ng2-codemirror/node_modules/codemirror/lib/codemirror.css",
+              "@plugins/ng2-codemirror/node_modules/codemirror/addon/hint/show-hint.css",
+              "@plugins/ng2-codemirror/node_modules/codemirror/theme/ambiance.css",
               "src/styles.less"
             ],
             "scripts": [],
