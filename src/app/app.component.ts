@@ -1,9 +1,10 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-
-import './@plugins/ng2-codemirror/node_modules/codemirror/lib/codemirror.js';
-import './@plugins/ng2-codemirror/node_modules/codemirror/mode/sql/sql.js';
+import * as CodeMirror from 'codemirror';
+// import './@plugins/ng2-codemirror/node_modules/codemirror/lib/codemirror.js';
+// import './@plugins/ng2-codemirror/node_modules/codemirror/mode/sql/sql.js';
 import './@plugins/ng2-codemirror/node_modules/codemirror/addon/hint/show-hint.js';
 import './@plugins/ng2-codemirror/node_modules/codemirror/addon/hint/sql-hint.js';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,7 +13,9 @@ import './@plugins/ng2-codemirror/node_modules/codemirror/addon/hint/sql-hint.js
 export class AppComponent implements OnInit {
   config: any = {};
   value = '';
-  isFirst = false;
+  instance;
+  keyCode;
+
   ngOnInit(): void {
     this.config = { // codemirror组件的配置项
       lineNumbers: true,                     //显示行号
@@ -34,18 +37,14 @@ export class AppComponent implements OnInit {
   }
 
   onCursorActivity($event) {
-    console.log($event);
-    if (!this.isFirst) {
-      document.addEventListener('keypress', e => {
-        if ((e.keyCode >= 65 && e.keyCode <= 90)) {
-          // $event.instance.showHint(true);
-          $event.instance.showHint({completeSingle: true});
-        } else {
-          $event.instance.showHint({completeSingle: false});
-        }
-      });
+    this.instance = $event.instance;
+    if (this.keyCode >= 65 && this.keyCode <= 90) {
+      CodeMirror.commands.autocomplete(this.instance, null, {completeSingle: true});
     }
-    this.isFirst = true;
+  }
+
+  onKeyup($event) {
+    this.keyCode = $event.keyCode;
   }
 
 }

@@ -2,6 +2,7 @@
 <codemirror
     [value]="value"
     [config]="config"
+    (keyup)="onKeyup($event)"
     (cursorActivity)="onCursorActivity($event)">
 </codemirror>
 <router-outlet></router-outlet>
